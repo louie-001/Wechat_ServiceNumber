@@ -5,6 +5,7 @@ package self.louie.wechat.enums;
  */
 public enum WechatEnums {
     URL_TOKEN("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential","获取accessToken"),
+    URL_QRCODE_CREATE("https://api.weixin.qq.com/cgi-bin/qrcode/create?","临时二维码请求"),
     ;
 
     private WechatEnums(String value,String desc){
