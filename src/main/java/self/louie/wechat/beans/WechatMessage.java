@@ -1,7 +1,5 @@
 package self.louie.wechat.beans;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
 /**
  * 微信平台消息模型，包含事件
  * Created by louie on 2017-11-14.

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>WedoBank,您的理财专家</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="//static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid" style="text-align: center">
+    <h3 style="margin: 20px">我的二维码</h3>
+    <div class="container">
+        <div id="qrcode" style="text-align: -webkit-center"></div>
+        <div class="mx-auto" style="width: 50%;padding: 20px">
+            <button type="button" class="btn btn-block" style="background-color: blueviolet;color: beige">点我分享</button>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    $.ajax({
+        type:"post",
+        url:"../wechat/qrcode/louie",
+        success:function (res) {
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: res,
+                width: 300,
+                height: 300,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        },
+        error:function (res) {
+            console.log(res);
+        }
+    });
+
+</script>
+</html>
