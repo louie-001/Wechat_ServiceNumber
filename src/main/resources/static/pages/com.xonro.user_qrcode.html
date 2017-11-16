@@ -9,6 +9,7 @@
     <script src="//cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <script src="//static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+    <script src="../js/com.xonro.common_util.js"></script>
 
 </head>
 <body>
@@ -17,16 +18,18 @@
     <div class="container">
         <div id="qrcode" style="text-align: -webkit-center"></div>
         <div class="mx-auto" style="width: 50%;padding: 20px">
-            <button type="button" class="btn btn-block" style="background-color: blueviolet;color: beige">点我分享</button>
+            <!--<button type="button" class="btn btn-block" style="background-color: blueviolet;color: beige">点我分享</button>-->
         </div>
     </div>
 </div>
 </body>
 
 <script>
+    var userId = getUserContext().id;
+//    var userId = "louie";
     $.ajax({
         type:"post",
-        url:"../wechat/qrcode/louie",
+        url:"../wechat/qrcode/"+userId,
         success:function (res) {
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: res,
